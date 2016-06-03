@@ -74,5 +74,4 @@ module.exports = yeoman.Base.extend({
       this.template('test.js', `${data.name}/__test__/index.js`, data);
     }
   }
-
 });
