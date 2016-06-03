@@ -1,15 +1,16 @@
 'use strict';
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
+var kebabCase = require('lodash.kebabcase');
 
 module.exports = yeoman.Base.extend({
 
   // NOTE: The name `constructor` is important here
   constructor: function () {
-    const now = new Date();
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    const month = months[now.getMonth()];
-    const date = month + ' ' + now.getDay() + ', ' + now.getFullYear();
+    var now = new Date();
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var month = months[now.getMonth()];
+    var date = month + ' ' + now.getDay() + ', ' + now.getFullYear();
 
     // Calling the super constructor is important so our generator is correctly set up
     yeoman.Base.apply(this, arguments);
@@ -64,7 +65,7 @@ module.exports = yeoman.Base.extend({
    * Now we actually copy and create
    */
   _create: function (props) {
-    const data = this.data;
+    var data = this.data;
     this.template('package.json', `${data.name}/package.json`, data);
     this.template('component.js', `${data.name}/${data.name}.js`, data);
     this.template('styles.scss', `${data.name}/styles.scss`, data);

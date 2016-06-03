@@ -1,12 +1,12 @@
 {
   "name": "generator-react-up",
-  "version": "0.0.1",
-  "description": "A simple React generator",
-  "homepage": "https://www.thredup.com",
+  "version": "0.0.2",
+  "description": "A simple React <Component /> generator",
+  "homepage": "http://www.visualmarvel.com",
   "author": {
     "name": "Matthew D. Shelley",
     "email": "dewayne.shelley@gmail.com",
-    "url": "https://www.visualmarvel.com"
+    "url": "http://www.visualmarvel.com"
   },
   "files": [
     "generators"
@@ -20,6 +20,7 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "gulp-beautify": "^2.0.0",
+    "lodash.kebabcase": "^4.0.1",
     "yeoman-generator": "^0.23.0",
     "yosay": "^1.0.0"
   },
