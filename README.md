@@ -1,4 +1,4 @@
-# generator-react-up [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+<!--# generator-react-up [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]-->
 > A simple React generator
 
 ## Installation

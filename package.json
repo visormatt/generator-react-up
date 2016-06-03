@@ -1,11 +1,11 @@
 {
   "name": "generator-react-up",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A simple React generator",
   "homepage": "https://www.thredup.com",
   "author": {
     "name": "Matthew D. Shelley",
-    "email": "matthew.shelley@thredup.com",
+    "email": "dewayne.shelley@gmail.com",
     "url": "https://www.visualmarvel.com"
   },
   "files": [
