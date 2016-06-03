@@ -21,13 +21,6 @@ module.exports = yeoman.Base.extend({
     this.initialized = false;
   },
 
-  install: function () {
-    console.log('01 - Installation');
-    this.npmInstall(['lodash', 'babel'], {
-      saveDev: false
-    });
-  },
-
   /**
    * 1. Create component
    * 2. Optional test stubs
@@ -77,11 +70,11 @@ module.exports = yeoman.Base.extend({
     var folder = data.name;
     var compPackage = folder + '/package.json';
     var compJavascript = folder + '/' + data.name + '.js';
-    var compStyles = folder + '/styles.json';
+    var compStyles = folder + '/styles.js';
 
     this.template('package.json', compPackage, data);
     this.template('component.js', compJavascript, data);
-    this.template('styles.scss', compStyles, data);
+    this.template('styles.js', compStyles, data);
 
     // Testing folder / stub
     if (props.addTests) {
