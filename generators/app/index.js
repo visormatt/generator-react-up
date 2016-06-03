@@ -5,7 +5,7 @@ var kebabCase = require('lodash.kebabcase');
 
 module.exports = yeoman.Base.extend({
 
-  // NOTE: The name `constructor` is important here
+  // NOTE: The name 'constructor' is important here
   constructor: function () {
     var now = new Date();
     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -18,6 +18,14 @@ module.exports = yeoman.Base.extend({
     this.date = date;
     this.name = arguments[0][0] || 'ExComponent';
     this.slug = this.name.toLowerCase();
+    this.initialized = false;
+  },
+
+  install: function () {
+    console.log('01 - Installation');
+    this.npmInstall(['lodash', 'babel'], {
+      saveDev: false
+    });
   },
 
   /**
@@ -29,17 +37,17 @@ module.exports = yeoman.Base.extend({
     var prompts = [{
       type: 'confirm',
       name: 'createComponent',
-      message: `Create a ${this.name} component?`,
+      message: 'Create a ' + this.name + ' component?',
       default: true
     }, {
       type: 'confirm',
       name: 'addTests',
-      message: `Create test folder + stub?`,
+      message: 'Create test folder + stub?',
       default: true
     }, {
       type: 'confirm',
       name: 'useRadium',
-      message: `Use radium / CSS Modules?`,
+      message: 'Use radium / CSS Modules?',
       default: true
     }];
 
@@ -56,7 +64,7 @@ module.exports = yeoman.Base.extend({
       if (props.createComponent) {
         this._create(props);
       } else {
-        this.log(chalk.yellow(`  Skipping creation`));
+        this.log(chalk.yellow('Skipping creation'));
       }
     }.bind(this));
   },
@@ -66,13 +74,19 @@ module.exports = yeoman.Base.extend({
    */
   _create: function (props) {
     var data = this.data;
-    this.template('package.json', `${data.name}/package.json`, data);
-    this.template('component.js', `${data.name}/${data.name}.js`, data);
-    this.template('styles.scss', `${data.name}/styles.scss`, data);
+    var folder = data.name;
+    var compPackage = folder + '/package.json';
+    var compJavascript = folder + '/' + data.name + '.js';
+    var compStyles = folder + '/styles.json';
+
+    this.template('package.json', compPackage, data);
+    this.template('component.js', compJavascript, data);
+    this.template('styles.scss', compStyles, data);
 
     // Testing folder / stub
     if (props.addTests) {
-      this.template('test.js', `${data.name}/__test__/index.js`, data);
+      var testPath = folder + '/__test__/index.js';
+      this.template('test.js', testPath, data);
     }
   }
 });
