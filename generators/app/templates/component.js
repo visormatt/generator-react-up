@@ -4,12 +4,11 @@ import styles from './styles';
 
 /**
  * <<%= name %> />
- *
  * created: <%= date %>
  */
 const <%= name %> = (props) => {
   return (
-    <div className="<%= slug %>" style={ styles.<%= slug %> }>
+    <div className="<%= slug %>" style={ styles.root }>
       <h2><%= name %></h2>
     </div>
   );

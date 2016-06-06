@@ -1,7 +1,7 @@
 'use strict';
-var yeoman = require('yeoman-generator');
+var _ = require('lodash');
 var chalk = require('chalk');
-var kebabCase = require('lodash.kebabcase');
+var yeoman = require('yeoman-generator');
 
 module.exports = yeoman.Base.extend({
 
@@ -10,15 +10,14 @@ module.exports = yeoman.Base.extend({
     var now = new Date();
     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     var month = months[now.getMonth()];
-    var date = month + ' ' + now.getDay() + ', ' + now.getFullYear();
+    var date = month + ' ' + now.getDate() + ', ' + now.getFullYear();
 
     // Calling the super constructor is important so our generator is correctly set up
     yeoman.Base.apply(this, arguments);
 
     this.date = date;
     this.name = arguments[0][0] || 'ExComponent';
-    this.slug = this.name.toLowerCase();
-    this.initialized = false;
+    this.slug = _.kebabCase(this.name);
   },
 
   /**
