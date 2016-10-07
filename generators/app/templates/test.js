@@ -1,4 +1,9 @@
+/* eslint-env mocha */
 import React from 'react';
+import { expect } from 'chai';
+import { shallow } from 'enzyme';
+import td from 'testdouble'; // you can remove this line if you don't need any test doubles
+
 import <%= name %> from '../<%= name %>';
 
 describe('<%= slug %>: test', () => {
