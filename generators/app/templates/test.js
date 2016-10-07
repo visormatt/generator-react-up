@@ -6,7 +6,7 @@ import td from 'testdouble'; // you can remove this line if you don't need any t
 
 import <%= name %> from '../<%= name %>';
 
-describe('<%= slug %>: test', () => {
+describe('<%= name %>: test', () => {
   let props;
 
   // Any initialization
