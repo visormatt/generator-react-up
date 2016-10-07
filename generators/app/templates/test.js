@@ -20,11 +20,11 @@ describe('<%= name %>: test', () => {
   it('renders', () => {
     const wrapper = shallow(<<%= name %> {...props} />);
 
-    expect(wrapper).to.not.be.empty;
+    expect(wrapper).to.not.be.empty();
   });
 
   // Replace this with your own specs
-  (it('should have more unit tests'), () => {
-    expect(false).to.be.true;
+  it('should have more unit tests', () => {
+    expect(false).to.be.true();
   });
 });
