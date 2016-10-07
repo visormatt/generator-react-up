@@ -77,7 +77,7 @@ module.exports = yeoman.Base.extend({
 
     // Testing folder / stub
     if (props.addTests) {
-      var testPath = folder + '/__test__/index.js';
+      var testPath = folder + '/__test__/' + data.name + 'Spec.js';
       this.template('test.js', testPath, data);
     }
   }

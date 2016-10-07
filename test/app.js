@@ -16,7 +16,7 @@ describe('generator-react-up TestComponent', function () {
 
   it('creates files', function () {
     assert.file([
-      '__test__/index.js',
+      '__test__/TestComponentSpec.js',
       'package.json',
       'TestComponent.js',
       'styles.scss'
