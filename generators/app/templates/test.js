@@ -1,26 +1,25 @@
-var assert = require('chai').assert;
+import React from 'react';
+import <%= name %> from '../<%= name %>';
 
-// Any initialization
-describe('<%= slug %>: hooks', function() {
+describe('<%= slug %>: test', () => {
+  let props;
 
-  before(function() {
-    // runs before all tests in this block
-  });
-
-  after(function() {
-    // runs after all tests in this block
-  });
-
-  beforeEach(function() {
-    // runs before each test in this block
-  });
-
-  afterEach(function() {
-    // runs after each test in this block
+  // Any initialization
+  beforeEach(() => {
+    props = {
+     // stub your component's props here
+    };
   });
 
   // test cases
-  describe('<%= slug %>: test', () => {
+  it('renders', () => {
+    const wrapper = shallow(<<%= name %> {...props} />);
+
+    expect(wrapper).to.not.be.empty;
+  });
+
+  // Replace this with your own specs
+  (it('should have more unit tests'), () => {
     expect(false).to.be.true;
   });
 });
