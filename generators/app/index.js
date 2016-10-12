@@ -40,7 +40,7 @@ module.exports = yeoman.Base.extend({
       type: 'confirm',
       name: 'useRadium',
       message: 'Use radium / CSS Modules?',
-      default: true
+      default: false
     }];
 
     // Now we ahve our answers, set our data
@@ -69,11 +69,15 @@ module.exports = yeoman.Base.extend({
     var folder = data.name;
     var compPackage = folder + '/package.json';
     var compJavascript = folder + '/' + data.name + '.js';
-    var compStyles = folder + '/styles.js';
 
     this.template('package.json', compPackage, data);
     this.template('component.js', compJavascript, data);
-    this.template('styles.js', compStyles, data);
+
+    // Do we want to use inline styles via radium `.js` ~ or ~ `.scss`
+    var stylesheet = props.radium ? 'styles.js' : 'styles.scss';
+    var compStyles = folder + '/' + stylesheet;
+
+    this.template(stylesheet, compStyles, data);
 
     // Testing folder / stub
     if (props.addTests) {
