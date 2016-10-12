@@ -1,5 +1,8 @@
+// Vendor
 import React from 'react';
 <% if (radium) { %>import radium from 'radium';<% } %>
+
+// Internal
 import styles from './styles';
 
 /**
@@ -18,4 +21,4 @@ const <%= name %> = (props) => {
 <%= name %>.propTypes = {
 };
 
-<% if (radium) { %>export default radium(<%= name %>);<% } else { %>export <%= name %>;<% } %>
+<% if (radium) { %>export default radium(<%= name %>);<% } else { %>export default <%= name %>;<% } %>

@@ -1,6 +1,8 @@
 {
+  "dependencies": {},
+  "devDependencies": {},
+  "main": "./<%= name %>.js",
   "name": "<%= name %>",
-  "version": "0.0.1",
   "private": true,
-  "main": "./<%= name %>.js"
+  "version": "1.0.0"
 }
