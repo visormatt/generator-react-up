@@ -1,4 +1,5 @@
 {
+  "author": "<%= author %>",
   "dependencies": {},
   "devDependencies": {},
   "main": "./<%= name %>.js",

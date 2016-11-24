@@ -1,7 +1,6 @@
 // Using inline CSS until we can get full CSS modules rolled out
 export default {
-
-  root: {
+  '<%= slug %>': {
     border: '1px solid #ccc'
   }
 };
