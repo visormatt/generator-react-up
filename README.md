@@ -11,34 +11,32 @@ npm install -g yo
 npm install -g generator-react-up
 ```
 
-## Methods
+## Available Methods
 Since Yeoman is kind enough to create a `generator-generator...` I've made this `generator` even more customizable for you. The goal of react-up was to reduce the boiler plate I had to write and it's worked incredibly well. While at **thredUP** I've managed to get other developers on board using it as well at which point quickly realized it needed a deeper level of customization.
 
 There are now several smaller generators which rock.
 
-
->**Setup / Customization**
+###### 1. Setup / Customization
 
 `yo react-up:setup`
 
-Simply run and follow the prompts to enjoy:
+Simply run the command above and follow the prompts:
 1. Customizable templates
-1. setup custom information
+1. User / Organization Specific Information
 
-
->**Default: Dumb Component**
+###### 2. Default: Dumb Component
 
 `yo react-up ComponentName`
 _~ or ~_
 `yo react-up:pure ComponentName`
 
-Create a smart component that contains all available life-cycle methods and link to the Facebook docs.
+Create a stateless component / pure function quickly using the command below, simply replace `ComponentName` for the name of your choice.
 
->**Smart Component**
+###### 3. Smart Component
 
 `yo react-up:class ComponentName`
 
-Create a stateless component / pure function quickly using the command below, simply replace `ComponentName` for the name of your choice.
+Create a smart component that contains all available life-cycle methods and link to the Facebook docs.
 
 ----
 
