@@ -128,6 +128,7 @@ module.exports = yeoman.Base.extend({
     }
 
     var prompts = [{
+      default: '_template',
       message: 'Template folder location (should be relative to project root)',
       name: 'templatePath',
       store: true,
