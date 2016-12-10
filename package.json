@@ -1,13 +1,19 @@
 {
   "name": "generator-react-up",
   "version": "0.0.12",
-  "description": "A simple React <Component /> generator",
-  "homepage": "http://www.visualmarvel.com",
   "author": {
     "name": "Matthew D. Shelley",
     "email": "dewayne.shelley@gmail.com",
-    "url": "http://www.visualmarvel.com"
+    "url": "https://www.localsbarguide.com"
   },
+  "description": "A simple React Generator. Spend less time writing boiler-plate code and more time writing the fun stuff.",
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  },
+  "homepage": "https://www.localsbarguide.com",
   "files": [
     "generators/app",
     "generators/class",
@@ -18,10 +24,17 @@
   "keywords": [
     "React",
     "Component",
-    "ES6 Class",
-    "Pure Function",
+    "Pure Functions",
+    "ES6 Classes",
     "yeoman-generator"
   ],
+  "license": "Apache-2.0",
+  "repository": "visormatt/generator-react-up",
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+
   "dependencies": {
     "chalk": "^1.0.0",
     "fs-extra": "^1.0.0",
@@ -43,17 +56,5 @@
     "gulp-plumber": "^1.0.0",
     "yeoman-assert": "^2.0.0",
     "yeoman-test": "^1.0.0"
-  },
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "mocha": true
-    }
-  },
-  "repository": "visormatt/generator-react-up",
-  "scripts": {
-    "prepublish": "gulp prepublish",
-    "test": "gulp"
-  },
-  "license": "Apache-2.0"
+  }
 }
