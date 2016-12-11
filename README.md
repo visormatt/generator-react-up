@@ -1,4 +1,6 @@
+<!-- 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+-->
 
 # React-Up
 This is a simple [Yeoman Generator](http://yeoman.io/) to help speed up the `stubbing` of a React `<Component />`. Each component is treated as an individual Module / Package with all files being co-located including optional tests.

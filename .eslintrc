@@ -27,30 +27,7 @@
 
   # Any customization we want to override
   rules: {
-    "array-callback-return": 0,
-    "arrow-parens": 0,
-
-    # http://eslint.org/docs/rules/class-methods-use-this
-    "class-methods-use-this": 0,
-
     "comma-dangle": ["error", "never"],
-
-    # "arrow-body-style": ["warn", "always"],
-    "react/no-unescaped-entities": 0,
-
-    # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
-    "react/forbid-prop-types": 0,
-
-    # https://github.com/iam4x/pokemongo-webspoof/blob/master/.eslintrc
-    "jsx-a11y/no-static-element-interactions": 0,
-
-    # https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
-    "import/no-extraneous-dependencies": 0,
-    # "import/no-extraneous-dependencies": [0, {
-    #   "devDependencies": ["**/*.test.js", "**/*.spec.js", "src/models/**/*.js"],
-    #   "optionalDependencies": false,
-    #   "peerDependencies": false
-    # }],
 
     "new-cap": ["error", {
       "capIsNew": false,
@@ -80,9 +57,6 @@
       "allowMultiline": true,
     }],
 
-    # https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger.md
-    "react/no-danger": 0,
-
     "react/jsx-filename-extension": [1, {
       "extensions": [
         ".js",
@@ -96,16 +70,8 @@
       "nonEmpty": "after-props",
       "selfClosing": "after-props"
     }],
-    # "jsx-closing-bracket-location": [<enabled>, "props-aligned"],
 
     "space-in-parens": ["error", "never"],
     "template-curly-spacing": ["error", "always"]
-  },
-
-  settings: {
-    react: {
-      pragma: "React",  // Pragma to use, default to "React"
-      version: "15.0" // React version, default to the latest React stable release
-    }
   }
 }

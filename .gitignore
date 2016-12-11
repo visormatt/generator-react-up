@@ -1,7 +1,9 @@
-# Folders
-generators
-node_modules
+# Ignored Folders
+node_modules/
+./generators/      # => compiled
+./test/            # => compiled
 
-# Files
-*.DS_Store
-npm-debug.log
+# Ignored Files
+.DS_Store
+./gulpfile.js
+npm-debug.log     # => compiled

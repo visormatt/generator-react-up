@@ -31,7 +31,7 @@
   "license": "Apache-2.0",
   "repository": "visormatt/generator-react-up",
   "scripts": {
-    "develop": "babel -d generators/ src/ --source-maps inline --watch --ignore spec.js",
+    "develop": "babel -d ./ ./src/ --source-maps inline --watch --ignore spec.js",
     "stop-prepublish": "gulp prepublish",
     "test": "gulp"
   },
@@ -56,7 +56,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.8.0",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-eslint": "^2.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^0.10.3",
