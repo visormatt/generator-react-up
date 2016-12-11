@@ -1,2 +1,2 @@
-# .npmignore - the files to not push to NPM
+# Files we do not push to NPM
 src/

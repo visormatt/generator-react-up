@@ -27,14 +27,14 @@ class Setup extends Base { // eslint-disable-line padded-blocks
   }
 
   /**
-   * @description This will set an author / domain name which is used in the
+   * @description This will set an domain / domain name which is used in the
    * `package.json` files as we create new Components
    */
-  setAuthor() {
-    return this.prompt(questions.author)
+  setDomain() {
+    return this.prompt(questions.domain)
       .then(answer => {
-        this.config.set('author', answer.author);
-        logger.success('- saving author name:', answer.author);
+        this.config.set('domain', answer.domain);
+        logger.success('- saving domain name:', answer.domain);
       })
       .catch(logger.error);
   }

@@ -1,9 +1,9 @@
 // Just to keep the Class a bit cleaner
 export default {
-  author: {
+  domain: {
     default: 'example.com',
-    message: 'Enter a author name:',
-    name: 'author',
+    message: 'Enter a custom domain:',
+    name: 'domain',
     type: 'input'
   },
 
