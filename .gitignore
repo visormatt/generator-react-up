@@ -1,9 +1,12 @@
 # Ignored Folders
 node_modules/
-./generators/      # => compiled
-./test/            # => compiled
+/generators/        # don't commit compiled files
+/test/
+
+!src/generators/    # keep the source versions
+!src/test/
 
 # Ignored Files
 .DS_Store
-./gulpfile.js
-npm-debug.log     # => compiled
+/gulpfile.js
+npm-debug.log       # => compiled
