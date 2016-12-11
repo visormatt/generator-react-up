@@ -1,3 +1,7 @@
-*.DS_Store
+# Folders
+generators
 node_modules
+
+# Files
+*.DS_Store
 npm-debug.log
