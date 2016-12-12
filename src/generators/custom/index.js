@@ -40,9 +40,10 @@ class Custom extends ReactUp { // eslint-disable-line padded-blocks
    */
   _copyCustomFiles(fileArray) {
     fileArray.map((file) => {
-      const src = chalk.yellow(file[0]);
-      const dest = chalk.cyan(file[1] || file[0]);
-      this.log(`- copy custom file: ${ src } => ${ dest }`);
+      const src = file[0];
+      const dest = file[1] || file[0];
+      this.log(`- copy custom file: ${ chalk.yellow(src) } => ${ chalk.cyan(dest) }`);
+      this.template(src, dest, this.data);
     });
   }
 }
