@@ -1,46 +1,18 @@
-// Vendor
-import { Base } from 'yeoman-generator';
-import { kebabCase } from 'lodash';
-
 // Internal
-import helper from '../common/helper';
 import logger from '../common/logger';
 import questions from './questions';
+import ReactUp from '../ReactUp';
 
 /**
  * @class Component
- * @description The Component class is used to generate all various types of
- * components. The first parameter is the component name and the second (optional)
- * parameter defines the type of component we'd like to create.
+ * @description Used to generate a variety of React Components
  *
  * This includes:
  *   - pure: stateless / pure functions
  *   - class: smart / stateful
  *   - connected: Redux connected w/ state
  */
-class Component extends Base { // eslint-disable-line padded-blocks
-
-  /**
-   * @description Anytime we extend a Class as done above, we need to call super
-   * to ensure the original Class is initialized. From there we save some basic
-   * data and let the generator do it's thing.
-   */
-  constructor(args, options) {
-    super(args, options);
-
-    const name = args[0] ? helper.componentName(args[0]) : 'DemoComponent';
-    const type = args[1] ? helper.componentName(args[1]) : 'pure';
-
-    // We'll use this for more data as well later on
-    this.data = {
-      config: this.config.getAll(),
-      slug: kebabCase(name),
-      tag: `<${ name } />`,
-      type: type.toLowerCase(),
-      date: helper.date,
-      name
-    };
-  }
+class Component extends ReactUp { // eslint-disable-line padded-blocks
 
   /**
    * @description This will set an author / domain name which is used in the
@@ -51,7 +23,7 @@ class Component extends Base { // eslint-disable-line padded-blocks
     const prompts = questions(data);
 
     return this.prompt(prompts)
-      .then(answers => {
+      .then((answers) => {
         if (!answers.create) {
           logger.skip(data.tag);
         } else {
@@ -63,6 +35,11 @@ class Component extends Base { // eslint-disable-line padded-blocks
 
   _create(config) {
     const data = this.data;
+    // const mapping = {
+    //   functional: 'Functional.js',
+    //   class: 'Class.js',
+    //   smart: 'Class.js'
+    // };
 
     this.template('class.js', `${ data.name }/${ data.name }.js`, data);
     this.template('package.json', `${ data.name }/package.json`, data);

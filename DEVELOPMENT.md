@@ -1,11 +1,9 @@
 ## Development:
-Since we are generally building ES6 components it only felt right that we update the generator to be built in ES6 as well. As such, we keep all our code in the `src/` directory and use babel to transpile it back to ES5 for compatibility.
+Yeoman expects our generator files to be located in a `generators/` directory so we compile all of our ES6 code down to ES5 and voila.
 
 We also need to setup our `.gitignore` and `.npmignore` so we don't keep the wrong versions of the files in the incorrect place. We don't want to commit our compiled generators to our repo so we ignore the `generators` folder which is created by our `npm run build` and `npm run develop` scripts. On the NPM registry side of things, we only want to add the compiled versions so we ignore the `src` folder.
 
-Yeoman expects our generator files to be located in a `generators/` directory so we just output of files there directly. We
-
-#### Local:
+**Local Development:**
 - Pull this repository locally
 - CD into root directory
 - `npm link`

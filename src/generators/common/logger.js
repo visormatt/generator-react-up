@@ -13,7 +13,7 @@ export default {
     console.log(chalk.gray('- using default'), value);
   },
 
-  // Keep our error logging consistent and a good place to throw a rollbar
+  // Good place to throw a rollbar possibly
   error(err) {
     console.error('Setup error:', err);
   },

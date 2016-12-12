@@ -1,3 +1,5 @@
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
+
 // Vendor
 import istanbul from 'gulp-istanbul';
 import eslint from 'gulp-eslint';

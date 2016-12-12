@@ -1,30 +1,14 @@
-// Vendor
-import { Base } from 'yeoman-generator';
-
 // Internal
 import logger from '../common/logger';
 import pathHelper from '../common/path';
 import questions from './questions';
+import ReactUp from '../ReactUp';
 
 /**
  * @class Setup
  * @description This class helps the user further customize the generator.
  */
-class Setup extends Base { // eslint-disable-line padded-blocks
-
-  /**
-   * @description Anytime we extend a Class as done above, we need to call super
-   * to ensure the original Class is initialized. From there we save some basic
-   * data and let the generator do it's thing.
-   */
-  constructor(args, options) {
-    super(args, options);
-
-    // We'll use this for more data as well later on
-    this.data = {
-      config: this.config.getAll()
-    };
-  }
+class Setup extends ReactUp { // eslint-disable-line padded-blocks
 
   /**
    * @description This will set an domain / domain name which is used in the
@@ -32,7 +16,7 @@ class Setup extends Base { // eslint-disable-line padded-blocks
    */
   setDomain() {
     return this.prompt(questions.domain)
-      .then(answer => {
+      .then((answer) => {
         this.config.set('domain', answer.domain);
         logger.success('- saving domain name:', answer.domain);
       })
@@ -45,7 +29,7 @@ class Setup extends Base { // eslint-disable-line padded-blocks
    */
   setTemplates() {
     return this.prompt(questions.template)
-      .then(answer => {
+      .then((answer) => {
         const { path } = answer;
         this.config.set('templates', path);
         this._setupTemplatePath(path); // eslint-disable-line no-underscore-dangle
