@@ -1,1 +1,78 @@
-{}
+# https://github.com/yannickcr/eslint-plugin-react
+{
+  extends: "airbnb",
+
+  env: {
+    browser: true,
+    mocha: true,
+    node: true,
+  },
+
+  globals: {
+    __ENVIRONMENT__: true,
+  },
+
+  parser: "babel-eslint",
+
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 6,
+    sourceType: "module",
+  },
+
+  plugins: [
+    "react"
+  ],
+
+  # Any customization we want to override
+  rules: {
+    "comma-dangle": ["error", "never"],
+
+    "new-cap": ["error", {
+      "capIsNew": false,
+      "capIsNewExceptions": ["CSSModules", "Schema", "React"],
+      "newIsCapExceptions": ["events"]
+    }],
+
+    "no-underscore-dangle": ["error", {
+      "allow": [
+        "__ENVIRONMENT__",  # Environment information
+        "__SOBRIETY__",     # Used to prefetch our Redux State
+        "_id"               # disabled for MongoDB `_id`
+      ]
+    }],
+
+    "padded-blocks": ["error", {
+      "blocks": "never",
+      "classes": "never",
+      "switches": "never"
+    }],
+
+    "prefer-arrow-callback": ["error", {
+      "allowNamedFunctions": true
+    }],
+
+    "react/jsx-curly-spacing": [2, "always", {
+      "allowMultiline": true,
+    }],
+
+    "react/jsx-filename-extension": [1, {
+      "extensions": [
+        ".js",
+        ".jsx"
+      ]
+    }],
+
+    "react/jsx-first-prop-new-line": [2, "never"],
+
+    "react/jsx-closing-bracket-location": ["error", {
+      "nonEmpty": "after-props",
+      "selfClosing": "after-props"
+    }],
+
+    "space-in-parens": ["error", "never"],
+    "template-curly-spacing": ["error", "always"]
+  }
+}

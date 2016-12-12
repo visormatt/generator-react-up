@@ -1,3 +1,15 @@
-*.DS_Store
-node_modules
-npm-debug.log
+# Ignored Folders
+node_modules/
+
+# don't commit compiled files
+/generators/
+/test/
+/gulpfile.js
+
+# keep the source versions
+!/src/generators
+!/src/test
+!/src/gulpfile.js
+
+# Ignored Files
+.DS_Store

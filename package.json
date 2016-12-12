@@ -1,39 +1,58 @@
 {
   "name": "generator-react-up",
-  "version": "0.0.12",
-  "description": "A simple React <Component /> generator",
-  "homepage": "http://www.visualmarvel.com",
+  "version": "0.1.0",
   "author": {
     "name": "Matthew D. Shelley",
     "email": "dewayne.shelley@gmail.com",
     "url": "http://www.visualmarvel.com"
   },
+  "description": "A simple React Generator. Spend less time writing boiler-plate code and more time writing the fun stuff.",
+  "homepage": "https://www.npmjs.com/package/generator-react-up",
   "files": [
-    "generators/app",
-    "generators/class",
-    "generators/pure",
+    "generators/common",
+    "generators/component",
+    "generators/custom",
     "generators/setup"
   ],
   "main": "generators/index.js",
   "keywords": [
     "React",
     "Component",
-    "ES6 Class",
-    "Pure Function",
+    "Pure Functions",
+    "ES6 Classes",
     "yeoman-generator"
   ],
+  "license": "Apache-2.0",
+  "repository": "visormatt/generator-react-up",
+  "scripts": {
+    "build": "babel -d ./ ./src/ --ignore spec.js",
+    "develop": "babel -d ./ ./src/ --source-maps inline --watch --ignore spec.js",
+    "prepublish": "npm run build",
+    "stop-prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
   "dependencies": {
     "chalk": "^1.0.0",
     "fs-extra": "^1.0.0",
     "gulp-beautify": "^2.0.0",
-    "lodash": "^4.13.1",
-    "yeoman-generator": "^0.23.0",
+    "lodash": "^4.17.2",
+    "yeoman-generator": "^0.24.1",
     "yosay": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^2.1.0",
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "eslint": "^3.12.0",
+    "eslint-config-airbnb": "^13.0.0",
     "eslint-config-xo-space": "^0.13.0",
-    "gulp": "^3.9.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "gulp": "^3.9.1",
     "gulp-eslint": "^2.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^0.10.3",
@@ -43,17 +62,5 @@
     "gulp-plumber": "^1.0.0",
     "yeoman-assert": "^2.0.0",
     "yeoman-test": "^1.0.0"
-  },
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "mocha": true
-    }
-  },
-  "repository": "visormatt/generator-react-up",
-  "scripts": {
-    "prepublish": "gulp prepublish",
-    "test": "gulp"
-  },
-  "license": "Apache-2.0"
+  }
 }
