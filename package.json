@@ -1,23 +1,17 @@
 {
   "name": "generator-react-up",
-  "version": "1.0.0-rc1",
+  "version": "0.1.0",
   "author": {
     "name": "Matthew D. Shelley",
     "email": "dewayne.shelley@gmail.com",
     "url": "http://www.visualmarvel.com"
   },
   "description": "A simple React Generator. Spend less time writing boiler-plate code and more time writing the fun stuff.",
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "mocha": true
-    }
-  },
   "homepage": "https://www.npmjs.com/package/generator-react-up",
   "files": [
-    "generators/app",
-    "generators/class",
-    "generators/pure",
+    "generators/common",
+    "generators/component",
+    "generators/custom",
     "generators/setup"
   ],
   "main": "generators/index.js",
@@ -31,8 +25,10 @@
   "license": "Apache-2.0",
   "repository": "visormatt/generator-react-up",
   "scripts": {
+    "build": "babel -d ./ ./src/ --ignore spec.js",
     "develop": "babel -d ./ ./src/ --source-maps inline --watch --ignore spec.js",
-    "stop-prepublish": "gulp prepublish",
+    "prepublish": "npm run build && gulp prepublish",
+    "stop-prepublish": "npm run build && gulp prepublish",
     "test": "gulp"
   },
   "dependencies": {

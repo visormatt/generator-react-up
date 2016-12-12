@@ -19,8 +19,7 @@ export default {
 
   // Copy our templates into a local directory
   copy(src, destination) {
-    const templates = path.resolve(src, '../../../templates');
-
+    const templates = path.resolve(__dirname, '../../templates/');
     return new Promise((resolve, reject) => {
       fse.copy(templates, destination, (err) => {
         if (err) reject(err);
@@ -39,8 +38,18 @@ export default {
     });
   },
 
-  // Return our template path
-  templates() {
+  // Check a file exists, used before we copy an item over
+  file(location) {
+    return new Promise((resolve, reject) => {
+      let file;
 
+      try {
+        file = require(`${ process.cwd() }/${ location }`);
+      } catch (e) {
+        return reject(e);
+      }
+
+      return resolve(file);
+    });
   }
 };

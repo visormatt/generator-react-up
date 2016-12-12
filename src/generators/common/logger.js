@@ -15,7 +15,7 @@ export default {
 
   // Good place to throw a rollbar possibly
   error(err) {
-    console.error('Setup error:', err);
+    console.error(chalk.red('- ReactUp error:'), err);
   },
 
   // Prompt a question to a user

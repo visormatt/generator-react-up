@@ -35,15 +35,14 @@ class Component extends ReactUp { // eslint-disable-line padded-blocks
 
   _create(config) {
     const data = this.data;
-    // const mapping = {
-    //   functional: 'Functional.js',
-    //   class: 'Class.js',
-    //   smart: 'Class.js'
-    // };
+    const { current, name, type } = data;
+    const componentSrc = type ? `component/${ type }.js` : 'component/class.js';
 
-    this.template('class.js', `${ data.name }/${ data.name }.js`, data);
-    this.template('package.json', `${ data.name }/package.json`, data);
-    this.template('styles.scss', `${ data.name }/styles.scss`, data);
+    this.sourceRoot(this.config.templates);
+
+    this.template(componentSrc, `${ current }/${ name }/${ name }.js`, data);
+    this.template('common/package.json', `${ current }/${ name }/package.json`, data);
+    this.template('common/styles.scss', `${ current }/${ name }/styles.scss`, data);
 
     if (config.tests) {
       this._tests(data); // eslint-disable-line no-underscore-dangle
@@ -51,10 +50,11 @@ class Component extends ReactUp { // eslint-disable-line padded-blocks
   }
 
   _tests(data) {
-    const testFile = `${ data.name }/_test/${ data.name }.test.js`;
-    this.template('test.js', testFile, data);
+    const { current, name } = data;
+    const testFile = `${ current }/${ name }/_test/${ name }.test.js`;
+    this.template('_test/index.js', testFile, data);
   }
 }
 
-// Export our generator
+// Export our generator available via CLI: `yo react-up:component CustomName`
 module.exports = Component;

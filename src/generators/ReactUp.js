@@ -18,23 +18,28 @@ class ReactUp extends Base { // eslint-disable-line padded-blocks
    * data and let the generator do it's thing.
    */
   constructor(args, options) {
+    // we store this before yeoman resets the root
+    const current = process.cwd();
+
+    // Always call super to ensure things are setup
     super(args, options);
 
-    const name = args[0] ? helper.componentName(args[0]) : false;
-    const type = args[1] ? args[1].toLowerCase() : false;
+    const name = args[0] ? helper.componentName(args[0]) : 'Example';
+    const type = args[1] ? args[1].toLowerCase() : 'pure';
 
     const config = this.config.getAll();
     const date = helper.date();
-    const tag = name ? `<${ name } />` : false;
     const slug = name ? kebabCase(name) : false;
+    const tag = name ? `<${ name } />` : false;
 
     // We'll use this for more data as well later on
-    this.data = { config, date, args, name, slug, tag, type };
+    this.data = { args, config, current, date, name, slug, tag, type };
 
     // Used to stop running any public methods left to run
     this.stop = false;
 
-    console.log(`- data -`, this.data); // eslint-disable-line
+    // Setup our template path up each
+    helper.templates(this);
   }
 }
 

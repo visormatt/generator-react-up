@@ -28,14 +28,9 @@ export default {
 
   // Allows users to copy all templates into a local (project) folder for customization.
   templates(generator) {
-    let rootPath;
-
-    // console.log('--- sourceRoot', generator.sourceRoot()); // eslint-disable-line no-console
-    if (generator.config.get('templates')) {
-      rootPath = generator.config.get('templates');
-    } else {
-      rootPath = path.resolve(generator.sourceRoot(), '../../../templates');
-    }
+    const projectPath = generator.sourceRoot();
+    const userPath = generator.config.get('templates');
+    const rootPath = userPath || path.resolve(projectPath, '../../templates');
 
     generator.sourceRoot(rootPath);
   }

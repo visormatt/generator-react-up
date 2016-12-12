@@ -3,7 +3,7 @@ import chalk from 'chalk';
 
 // Just to keep the Class a bit cleaner
 const createQuestions = (data) => {
-  const { tag, type } = data;
+  const { tag, type = 'pure' } = data;
 
   return [{
     type: 'confirm',

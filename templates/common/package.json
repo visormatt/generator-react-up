@@ -1,5 +1,7 @@
 {
-  "author": "<%= author %>",
+<% if (config.domain) { %>
+  "author": "<%= config.domain %>",
+<% } -%>
   "dependencies": {},
   "devDependencies": {},
   "main": "./<%= name %>.js",
