@@ -14,6 +14,9 @@ import ReactUp from '../ReactUp';
  */
 class Setup extends ReactUp { // eslint-disable-line padded-blocks
 
+  /**
+   * @description A nicer way to get started
+   */
   welcome() {
     const message = `Hello, and welcome to the ${ chalk.red('ReactUp') } generator!`;
     this.log(yosay(message));

@@ -38,7 +38,7 @@ class ReactUp extends Base { // eslint-disable-line padded-blocks
     // Used to stop running any public methods left to run
     this.stop = false;
 
-    // Setup our template path up each
+    // Setup the default or custom template path
     helper.templates(this);
   }
 }

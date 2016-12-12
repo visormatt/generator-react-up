@@ -13,10 +13,6 @@ import ReactUp from '../ReactUp';
  */
 class Custom extends ReactUp { // eslint-disable-line padded-blocks
 
-  // hasSetup() {
-  //   console.log('-- this.data', this.data); // eslint-disable-line no-console
-  // }
-
   /**
    * @description This will set an author / domain name which is used in the
    * `package.json` files as we create new Customs

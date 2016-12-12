@@ -27,8 +27,8 @@
   "scripts": {
     "build": "babel -d ./ ./src/ --ignore spec.js",
     "develop": "babel -d ./ ./src/ --source-maps inline --watch --ignore spec.js",
-    "prepublish": "npm run build && gulp prepublish",
-    "stop-prepublish": "npm run build && gulp prepublish",
+    "prepublish": "npm run build",
+    "stop-prepublish": "gulp prepublish",
     "test": "gulp"
   },
   "dependencies": {
