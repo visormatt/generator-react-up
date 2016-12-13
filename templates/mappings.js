@@ -12,13 +12,20 @@ const TEST_FOLDER = '_test';
 const mappings = (data = {}) => {
   const { name } = data;
 
-  /**
-   * NOTE: Uncomment to see what else is available for further customization.
-   * This data is passed to each template and can be used in each template.
-   */
+  // NOTE: Uncomment the line below to see the data available to the templates
   // console.log('- available template data:', data);
 
+  /**
+   * @description The idea is that you can setup your own template sets and
+   *
+   */
   return {
+
+    /**
+     * @name yo react-up Name class
+     * @description Create a React Functional Component w/ initial
+     * testing folder + stub.
+     */
     class: [
       ['_test/index.js', `${ name }/${ TEST_FOLDER }/${ name }${ TEST_EXT }`],
       ['common/package.json', `${ name }/package.json`],
@@ -26,6 +33,11 @@ const mappings = (data = {}) => {
       ['component/class.js', `${ name }/${ name }.js`]
     ],
 
+    /**
+     * @name yo react-up Name pure
+     * @description Create a self-contained functional component w/ initial
+     * testing folder + stub.
+     */
     pure: [
       ['_test/index.js', `${ name }/${ TEST_FOLDER }/${ name }${ TEST_EXT }`],
       ['common/package.json', `${ name }/package.json`],
@@ -33,17 +45,29 @@ const mappings = (data = {}) => {
       ['component/pure.js', `${ name }/${ name }.js`]
     ],
 
+    /**
+     * @name yo react-up Name test
+     * @description Creates an initial testing folder + stub.
+     */
     test: [
       ['_test/index.js', `${ name }/${ TEST_FOLDER }/${ name }${ TEST_EXT }`]
     ],
 
     /**
-     * A very dumbed down example of using an a key and array of files which take
-     * source (relative to local templates) and an optional destination. If the
-     * user doesn't supply a destination it copy it as it's found.
+     * @name yo react-up MyExample example
+     * @description This one is for demonstration purposes.
+     *
+     * Demonstrates:
+     *  - uses TEST_FOLDER and TEST_EXT constants set in `_templates/defaults.js`
+     *  - intentional template file is missing to demonstrate feedback
+     *  - contains working example of various template tags
+     *  - simple files renaming and multi-level folder structures
      */
     example: [
-      ['common/package.json', 'common/package.json']
+      ['_test/index.js', `${ name }/${ TEST_FOLDER }/${ name }${ TEST_EXT }`],
+      // ['common/DoesntExist.md', `${ name }/README.md`],
+      ['example/README.md', `${ name }/sub-folder/custom.md`],
+      ['example/README.md', `${ name }/README.md`]
     ]
   };
 };

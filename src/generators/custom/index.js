@@ -9,15 +9,31 @@ import ReactUp from '../ReactUp';
 /**
  * @class Custom
  * @description Allows the user to define more custom workflows by updating
- * the object found in `templates/custom.js`
+ * the object found locally in `_templates/mappings.js`
  */
 class Custom extends ReactUp { // eslint-disable-line padded-blocks
+
+  /**
+   * We use this method to ensure the user has copied the templates over
+   * before running the `react-up:custom` generator.
+   */
+  checkSetup() {
+    const { config } = this.data;
+    console.log(`--- check`, this.data);
+
+    if (!config.templates) {
+      this.stop = true;
+      this.composeWith('react-up:setup');
+    }
+  }
 
   /**
    * @description This will set an author / domain name which is used in the
    * `package.json` files as we create new Customs
    */
   setup() {
+    if (this.stop) return;
+
     path.file('_templates/mappings.js')
       .then((mappings) => {
         const customBuilds = mappings(this.data);
