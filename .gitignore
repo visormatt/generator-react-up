@@ -2,9 +2,9 @@
 node_modules/
 
 # don't commit compiled files
-# /generators/
-# /test/
-# /gulpfile.js
+/generators/
+/test/
+/gulpfile.js
 
 # keep the source versions
 !/src/generators

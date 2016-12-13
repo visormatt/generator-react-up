@@ -1,6 +1,6 @@
 {
   "name": "generator-react-up",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "author": {
     "name": "Matthew D. Shelley",
     "email": "dewayne.shelley@gmail.com",
@@ -9,10 +9,8 @@
   "description": "A simple React Generator. Spend less time writing boiler-plate code and more time writing the fun stuff.",
   "homepage": "https://www.npmjs.com/package/generator-react-up",
   "files": [
-    "generators/common",
-    "generators/component",
-    "generators/custom",
-    "generators/setup"
+    "generators",
+    "templates"
   ],
   "main": "generators/index.js",
   "keywords": [
@@ -31,7 +29,6 @@
     "version": "npm run build && git add -A",
     "postversion": "git push && git push --tags",
 
-    "prepublish": "npm i && npm run build",
     "stop-prepublish": "gulp prepublish",
     "test": "gulp"
   },
