@@ -97,7 +97,7 @@ class Setup extends ReactUp { // eslint-disable-line padded-blocks
 
   complete() {
     if (this.stop) return;
-    const { config } = this.data;
+    const config = this.config.getAll(); // get our new config
     this.log(successMessage(config));
   }
 
