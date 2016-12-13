@@ -33,7 +33,17 @@ class ReactUp extends Base { // eslint-disable-line padded-blocks
     const tag = name ? `<${ name } />` : false;
 
     // We'll use this for more data as well later on
-    this.data = { args, config, current, date, name, slug, tag, type };
+    this.data = {
+      args,             // Hold onto all the arguments we are given
+      config,           // Any saved information (ie: domain, template path)
+      current,          // The directory the generator is fired from
+      date,             // Current data string
+      name,             // Name is usally used for filesnames and folders
+      options,          // Any flags used `ie: --pure, --connected`
+      slug,             // Lowercased and `-` seperated words
+      tag,              // A tag created from the `name` above
+      type              // not used yet
+    };
 
     // Used to stop running any public methods left to run
     this.stop = false;

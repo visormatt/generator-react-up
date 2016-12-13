@@ -2,7 +2,7 @@
 export default {
   customize: {
     default: true,
-    message: 'Would you like to continue customizing?',
+    message: 'Would you like to run the setup?',
     name: 'customize',
     type: 'confirm'
   },
@@ -12,6 +12,13 @@ export default {
     message: 'Enter a custom domain:',
     name: 'domain',
     type: 'input'
+  },
+
+  relative: {
+    default: true,
+    message: 'Run generator from the current directory?',
+    name: 'relative',
+    type: 'confirm'
   },
 
   template: {

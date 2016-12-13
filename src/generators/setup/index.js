@@ -8,6 +8,23 @@ import pathHelper from '../common/path';
 import questions from './questions';
 import ReactUp from '../ReactUp';
 
+// Setup
+const successMessage = (config) => (`
+  Setup complete, get started using any of the generators below:
+
+  ${ chalk.gray(' * yo react-up Name') }
+  ${ chalk.gray(' * yo react-up Name class') }
+  ${ chalk.gray(' * yo react-up example-test test') }
+
+  Create your own templates or customize the defaults:
+
+  ${ chalk.gray(` * ${ config.root }/${ config.templates }mappings.js`) }
+
+  Or run setup again at any point using:
+
+  ${ chalk.gray(' * yo react-up:setup') }
+`);
+
 /**
  * @class Setup
  * @description This class helps the user further customize the generator.
@@ -18,7 +35,7 @@ class Setup extends ReactUp { // eslint-disable-line padded-blocks
    * @description A nicer way to get started
    */
   welcome() {
-    const message = `Hello, and welcome to the ${ chalk.red('ReactUp') } generator!`;
+    const message = `Hello, and welcome to the ${ chalk.red('react-up') } generator!`;
     this.log(yosay(message));
 
     return this.prompt(questions.customize)
@@ -40,7 +57,24 @@ class Setup extends ReactUp { // eslint-disable-line padded-blocks
       .then((answer) => {
         this.config.set('domain', answer.domain);
         this.config.set('root', process.cwd());
-        logger.success('- saving domain name:', answer.domain);
+        // logger.success('- saving domain name:', answer.domain);
+      })
+      .catch(logger.error);
+  }
+
+  /**
+   * @description Setting up relative paths allows the user to run any of the
+   * generators from within any sub-folder. Setting this value to false, will
+   * run all reducers relative to the project root where the users `.yo-rc.json`
+   */
+  setRelative() {
+    if (this.stop) return Promise.resolve();
+
+    return this.prompt(questions.relative)
+      .then((answer) => {
+        const { relative } = answer;
+        this.config.set('relative', relative);
+        // logger.success('- use current location:', relative);
       })
       .catch(logger.error);
   }
@@ -61,6 +95,12 @@ class Setup extends ReactUp { // eslint-disable-line padded-blocks
       .catch(logger.error);
   }
 
+  complete() {
+    if (this.stop) return;
+    const { config } = this.data;
+    this.log(successMessage(config));
+  }
+
   /**
    * @description Copy the generators default templates into a user defined
    * directory, which allows the user to further customize each
@@ -72,7 +112,6 @@ class Setup extends ReactUp { // eslint-disable-line padded-blocks
       .then(pathHelper.clean(path)
         .then(() => {
           pathHelper.copy(srcRoot, path);
-          logger.success('- custom template path created:', path);
         }))
       .catch(logger.error);
   }

@@ -15,7 +15,15 @@ export default {
 
   // Good place to throw a rollbar possibly
   error(err) {
-    console.error(chalk.red('- ReactUp error:'), err);
+    console.error(chalk.red('- error'), err);
+  },
+
+  // Call out when a user tries to use a template that doesn't exist
+  missing(path) {
+    const message = chalk.gray('- template not found');
+    const file = chalk.yellow(`"${ path }"`);
+    const skipping = chalk.gray('skipping.');
+    console.error(message, file, skipping);
   },
 
   // Prompt a question to a user
