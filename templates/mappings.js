@@ -4,7 +4,7 @@ const TEST_FOLDER = '_test';
 
 /**
  * @description Modify the existing configurations or create your own
- * @example yo react-up SomeName <key>
+ * @example yo react-up <name> <key>
  */
 const mappings = (data = {}) => {
   const { args, name } = data;
@@ -18,7 +18,7 @@ const mappings = (data = {}) => {
   return {
 
     /**
-     * @name yo react-up <ReactComponentName> class
+     * @example yo react-up <ReactComponentName> class
      */
     class: {
       description: 'React Component',
@@ -32,7 +32,7 @@ const mappings = (data = {}) => {
     },
 
     /**
-     * @name yo react-up <ComponentName> pure
+     * @example yo react-up <ComponentName> pure
      */
     pure: {
       description: 'Functional Component',
@@ -46,7 +46,7 @@ const mappings = (data = {}) => {
     },
 
     /**
-     * @name yo react-up <name> test
+     * @example yo react-up <name> test
      */
     test: {
       description: 'Test Stub',
@@ -57,7 +57,7 @@ const mappings = (data = {}) => {
     },
 
     /**
-     * @name yo react-up MyExample example
+     * @example yo react-up <MyExample> example
      * @description This one is for demonstration purposes.
      *
      * Demonstrates:
@@ -71,11 +71,15 @@ const mappings = (data = {}) => {
       detail: 'Create an example component?',
       files: [
         ['_test/index.js', `${ name }/${ TEST_FOLDER }/${ name }${ TEST_EXT }`],
-        ['example/README.md', `${ name }/sub-folder/custom.md`],
-        ['example/README.md', `${ name }/README.md`],
+        ['README.md', `${ name }/sub-folder/custom.md`],
+        ['README.md', `${ name }/README.md`],
         ['something/that/doesnt/exist.md', `${ name }/README.md`]
       ]
     }
+
+    /**
+     * @example yo react-up <MyExample> create-your-own
+     */
   };
 };
 
