@@ -79,7 +79,20 @@ a:hover {
   /*background-color: #FF0000;*/
   background-image: linear-gradient(120deg, #FF0000, #990000);
   border-bottom: 1px solid #990000;
+  overflow: hidden;
+  position: relative;
 }
+
+.page-header .yeoman {
+  bottom: 0;
+  height: 0;
+  padding-bottom: 20%;
+  padding-left: 0;
+  position: absolute;
+  right: 0;
+  width: 25%;
+}
+
 
 @media screen and (min-width: 64em) {
   .page-header {
