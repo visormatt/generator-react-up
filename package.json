@@ -1,16 +1,12 @@
 {
   "name": "generator-react-up",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "author": {
     "name": "Matthew D. Shelley",
     "email": "dewayne.shelley@gmail.com",
     "url": "http://www.visualmarvel.com"
   },
-  "description": "A simple and customizabe React Generator.
-    Written in ES6 (babel) this generator allows the end user to configure the templating of custom templates...
-    Chew on that for a bit, then give it a go and customize / create your own workflow.
-    \nSpend less time writing boiler-plate code and more time writing the fun stuff.
-  ",
+  "description": "A simple and customizabe React Generator. \nWritten in ES6 (babel) this generator allows the end user to configure the templating of custom templates... \nSpend less time writing boiler-plate code and more time writing the fun stuff.",
   "homepage": "https://www.npmjs.com/package/generator-react-up",
   "files": [
     "generators",
@@ -19,9 +15,12 @@
   "main": "generators/index.js",
   "keywords": [
     "React",
-    "Component",
-    "Pure Functions",
+    "boiler-plate",
+    "component",
     "ES6 Classes",
+    "Pure Functions",
+    "Stateless Component",
+    "Yeoman Generator",
     "yeoman-generator"
   ],
   "license": "Apache-2.0",
