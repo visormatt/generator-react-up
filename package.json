@@ -7,7 +7,7 @@
     "url": "http://www.visualmarvel.com"
   },
   "description": "A simple and customizabe React Generator. \nWritten in ES6 (babel) this generator allows the end user to configure the templating of custom templates... \nSpend less time writing boiler-plate code and more time writing the fun stuff.",
-  "homepage": "https://www.npmjs.com/package/generator-react-up",
+  "homepage": "https://visormatt.github.io/generator-react-up/",
   "files": [
     "generators",
     "templates"
