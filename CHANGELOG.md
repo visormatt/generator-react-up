@@ -1,19 +1,12 @@
-1.0.0 / 2016-12-10
+0.1.6 / 2016-12-12
 ==================
 #### Generator Overhaul:
 This is officially the first full release of the `react-up` generator.
-* Updated package to ES6
+* Updated package to ES6 (babel)
 * Removed duplicate template files / directories
-* User configurable / project specific templates
+* Two primary generators
   - `yo react-up:setup`
-* Functional / Pure Component method / generator. This is now the default method and accessible two ways.
   - `yo react-up <CustomName> <type>`
-  - default:
-    - `pure` - functional component
-  - supports:
-    - `pure` - functional component
-    - `smart` - smart component
-    - `connected` - Redux connected component
 * Updated documentation and commenting throughout
 * Improved User flow, messaging and prompts
 
