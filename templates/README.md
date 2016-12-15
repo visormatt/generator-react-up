@@ -8,40 +8,40 @@ Using the object returned from `mappings.js` we get some basic information. From
 // Here we output the marker tags with `%%`
 const before = {
   args: [
-  <%% args.forEach((args) => { %>
-    '<%%= args -%>',
-  <%% }); -%>
+  <%%% args.forEach((args) => { %>
+    '<%%%= args -%>',
+  <%%% }); -%>
   ],
   config: {
-    domain: '<%%= config.domain %>',
-    root: '<%%= config.root %>',
-    templates: '<%%= config.templates %>',
+    domain: '<%%%= config.domain %>',
+    root: '<%%%= config.root %>',
+    templates: '<%%%= config.templates %>',
+  },
+  current: '<%%%= current %>',
+  date: '<%%%= date %>',
+  name: '<%%%= name %>',
+  slug: '<%%%= slug %>',
+  tag: '<%%%- tag %>',
+  type: '<%%%= type %>',
+}
+
+// And this is the generated output
+const after = {
+  args: [
+<%% args.forEach((args) => { -%>
+    '<%%= args -%>',
+<%% }); -%>
+  ],
+  config: {
+    domain: '<%%= current %>',
+    root: '<%%= current %>',
+    templates: '<%%= current %>'
   },
   current: '<%%= current %>',
   date: '<%%= date %>',
   name: '<%%= name %>',
   slug: '<%%= slug %>',
   tag: '<%%- tag %>',
-  type: '<%%= type %>',
-}
-
-// And this is the generated output
-const after = {
-  args: [
-<% args.forEach((args) => { -%>
-    '<%= args -%>',
-<% }); -%>
-  ],
-  config: {
-    domain: '<%= current %>',
-    root: '<%= current %>',
-    templates: '<%= current %>'
-  },
-  current: '<%= current %>',
-  date: '<%= date %>',
-  name: '<%= name %>',
-  slug: '<%= slug %>',
-  tag: '<%- tag %>',
-  type: '<%= type %>'
+  type: '<%%= type %>'
 }
 ```

@@ -6,10 +6,10 @@ import React from 'react';
 // Setup
 
 /**
- * @class <%= name %>
+ * @class <%%= name %>
  * @description Brief description
  */
-class <%= name %> extends React.Component {
+class <%%= name %> extends React.Component {
   // https://goo.gl/g1KBEL
   constructor() {
     super();
@@ -53,17 +53,17 @@ class <%= name %> extends React.Component {
   // https://goo.gl/HBJp32
   render() {
     return (
-      <div className="<%= slug %>"
+      <div className="<%%= slug %>"
         onClick={ this.onClick }>
-        <h2><%= name %></h2>
+        <h2><%%= name %></h2>
       </div>
     );
   }
 };
 
 // Enforce required properies or methods
-<%= name %>.propTypes = {
+<%%= name %>.propTypes = {
   // active: React.PropTypes.bool.isRequired
 };
 
-export default <%= name %>;
+export default <%%= name %>;

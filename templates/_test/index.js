@@ -5,9 +5,9 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
 // Internal
-import <%= name %> from '../<%= name %>';
+import <%%= name %> from '../<%%= name %>';
 
-describe('<%= name %>: test', () => {
+describe('<%%= name %>: test', () => {
   let props;
 
   // Any initialization
@@ -19,7 +19,7 @@ describe('<%= name %>: test', () => {
 
   // test cases
   it('renders', () => {
-    const wrapper = shallow(<<%= name %> {...props} />);
+    const wrapper = shallow(<<%%= name %> {...props} />);
 
     expect(wrapper).to.not.be.empty();
   });

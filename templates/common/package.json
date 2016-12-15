@@ -1,11 +1,11 @@
 {
-<% if (config.domain) { %>
-  "author": "<%= config.domain %>",
-<% } -%>
+<%% if (config.domain) { %>
+  "author": "<%%= config.domain %>",
+<%% } -%>
   "dependencies": {},
   "devDependencies": {},
-  "main": "./<%= name %>.js",
-  "name": "<%= name %>",
+  "main": "./<%%= name %>.js",
+  "name": "<%%= name %>",
   "private": true,
   "version": "1.0.0"
 }
