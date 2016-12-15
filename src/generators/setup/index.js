@@ -1,5 +1,6 @@
 // Vendor
 import chalk from 'chalk';
+import path from 'path';
 import yosay from 'yosay';
 
 // Internal
@@ -56,8 +57,8 @@ class Setup extends ReactUp { // eslint-disable-line padded-blocks
     return this.prompt(questions.domain)
       .then((answer) => {
         this.config.set('domain', answer.domain);
+        this.config.set('package', __dirname);
         this.config.set('root', process.cwd());
-        // logger.success('- saving domain name:', answer.domain);
       })
       .catch(logger.error);
   }
@@ -72,9 +73,7 @@ class Setup extends ReactUp { // eslint-disable-line padded-blocks
 
     return this.prompt(questions.relative)
       .then((answer) => {
-        const { relative } = answer;
-        this.config.set('relative', relative);
-        // logger.success('- use current location:', relative);
+        this.config.set('relative', answer.relative);
       })
       .catch(logger.error);
   }
@@ -88,9 +87,9 @@ class Setup extends ReactUp { // eslint-disable-line padded-blocks
 
     return this.prompt(questions.template)
       .then((answer) => {
-        const { path } = answer;
-        this.config.set('templates', path);
-        this._setupTemplatePath(path); // eslint-disable-line no-underscore-dangle
+        const { templates } = answer;
+        this.config.set('templates', templates);
+        this._setupTemplatePath(templates); // eslint-disable-line no-underscore-dangle
       })
       .catch(logger.error);
   }
@@ -102,17 +101,18 @@ class Setup extends ReactUp { // eslint-disable-line padded-blocks
   }
 
   /**
-   * @description Copy the generators default templates into a user defined
-   * directory, which allows the user to further customize each
+   * @description Anytime we run the setup we now use the Yeoman method
+   * which protects us from overwritting any changes the user may have made
+   * to their templates. Always grabbing the default templates which exist
+   * inside of the NPM package
    */
-  _setupTemplatePath(path) {
-    const srcRoot = this.sourceRoot();
+  _setupTemplatePath(files) {
+    const defaultTemplates = path.resolve(__dirname, '../../templates');
 
-    pathHelper.create(path)
-      .then(pathHelper.clean(path)
-        .then(() => {
-          pathHelper.copy(srcRoot, path);
-        }))
+    pathHelper.create(files)
+      .then(() => {
+        this.template(defaultTemplates, files);
+      })
       .catch(logger.error);
   }
 }

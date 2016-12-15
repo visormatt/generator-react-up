@@ -24,7 +24,7 @@ export default {
   template: {
     default: '_templates/',
     message: 'Enter a local template path',
-    name: 'path',
+    name: 'templates',
     type: 'input'
   }
 };
