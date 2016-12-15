@@ -1,6 +1,6 @@
 {
   "name": "generator-react-up",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "author": {
     "name": "Matthew D. Shelley",
     "email": "dewayne.shelley@gmail.com",
@@ -14,7 +14,7 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "React",
+    "React Generator",
     "boiler-plate",
     "component",
     "ES6 Classes",
@@ -28,12 +28,10 @@
   "scripts": {
     "build": "babel -d ./ ./src/ --ignore spec.js",
     "develop": "babel -d ./ ./src/ --source-maps inline --watch --ignore spec.js",
-
-    "version": "npm run build && git add -A",
     "postversion": "git push && git push --tags",
-
     "stop-prepublish": "gulp prepublish",
-    "test": "gulp"
+    "test": "gulp",
+    "version": "npm run build && git add -A"
   },
   "dependencies": {
     "chalk": "^1.0.0",

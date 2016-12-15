@@ -1,11 +1,13 @@
-0.1.7 / 2016-12-13
+1.0.0 / 2016-12-13
 ==================
-
+#### Real Release
+This is officially the first full release of the `react-up` generator.
+- [x] [Bug fix](https://github.com/visormatt/generator-react-up/issues/5): Setup will delete previous templates folder
+- [x] Added & customized [Github Page(s)](visormatt.github.io/generator-react-up)
 
 0.1.6 / 2016-12-12
 ==================
 #### Generator Overhaul:
-This is officially the first full release of the `react-up` generator.
 * Updated package to ES6 (babel)
 * Removed duplicate template files / directories
 * Two primary generators
