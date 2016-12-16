@@ -37,35 +37,61 @@
     -->
     <div class="highlight highlight-source-shell">
 <pre>
-<span class="pl-c"># Pure function</span>
-yo react-up <span class="pl-k">&lt;</span>ComponentName<span class="pl-k">&gt;</span>
-
-<span class="pl-c"># React Component</span>
+<span class="pl-c"># ES6 Class extending React.Component</span>
 yo react-up <span class="pl-k">&lt;</span>ComponentName<span class="pl-k">&gt;</span> class
 
-<span class="pl-c"># Test file</span>
+<span class="pl-c"># Pure function</span>
+yo react-up <span class="pl-k">&lt;</span>ComponentName<span class="pl-k">&gt;</span> pure
+
+<span class="pl-c"># Note: `pure` is the default `type`, meaning you can simply run:</span>
+yo react-up <span class="pl-k">&lt;</span>ComponentName<span class="pl-k">&gt;</span>
+
+<span class="pl-c"># Create a new test / spec file</span>
 yo react-up <span class="pl-k">&lt;</span>name<span class="pl-k">&gt;</span> <span class="pl-c1">test</span>
+
+<span class="pl-c"># Example used to show what information is made available to the templating engine</span>
+yo react-up MyTest example
 </pre>
 
 <h3>
   <a id="customization" class="anchor" href="#customization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Customization:
 </h3>
 <p>
-  To <b>create or modify</b> existing methods available, simply update the
-  <code><b>mappings.js</b></code> within your local template folder. It's
-  a pretty simple idea and highly flexible. Feel free to clobber the built in methods and create your own.
+  To <b>create or modify</b> existing methods available, simply update the object
+  returned in <code><b>mappings.js</b></code> of your local template folder. It's
+  a simple object with 3 properties.
 </p>
 
 <pre>
-  example: {
-    description: 'example',
-    detail: 'The confirmation presented to the user.',
-    files: [
-      [src, destination]
-    ]
-  }
+example: {
+  description: 'example',
+  detail: 'The prompt presented to the user.',
+  files: [
+    [src1, destination1],
+    [src2, destination2]
+  ]
+}
 </pre>
 
+<p>
+  And to run your custom generator we give it a name and pass in the <b>type</b>
+  which should match the <b>key</b> set above.
+</p>
+<pre>
+<span class="pl-c"># All generators are run using:</span>
+yo react-up <b>name</b> <b>type</b>
+
+<span class="pl-c"># We end up with something like:</span>
+yo react-up StatelessComponent <b>pure</b>
+</pre>
+
+<p>
+  And to run your custom generator we give it a name and pass in the <b>type</b>
+  which should match the <b>key</b> set above. And voila, we've just created a
+  self-contained Component that can be tailored to suite my needs.
+</p>
+
+<img src="https://cloud.githubusercontent.com/assets/545829/21254793/a52f3eca-c31c-11e6-8449-625eca98bf45.png" alt="" />
 
 <hr>
     <!--
