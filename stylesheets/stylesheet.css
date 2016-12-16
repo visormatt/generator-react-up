@@ -42,6 +42,7 @@ a:hover {
   /*color: rgba(255, 255, 255, 0.7);*/
   color: #FF0000;
   display: inline-block;
+  font-size: 12px;
   font-weight: bold;
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -99,14 +100,16 @@ a:hover {
 
 .page-header .yeoman {
   bottom: 0;
-  height: 0;
-  padding-bottom: 20%;
+  height: 65%;
   padding-left: 0;
   position: absolute;
   right: 0;
   width: 25%;
 }
 
+.page-header .yeoman img {
+  max-width: 100%;
+}
 
 @media screen and (min-width: 64em) {
   .page-header {
@@ -123,6 +126,10 @@ a:hover {
 @media screen and (max-width: 42em) {
   .page-header {
     padding: 2rem 1rem;
+  }
+
+  .page-header .yeoman {
+    height: 35%;
   }
 }
 
@@ -376,6 +383,10 @@ a:hover {
   overflow: hidden;
 }
 
+.generator-options {
+  margin-top: 2em;
+}
+
 .generator-options,
 .generator-options tr,
 .generator-options tr td {
@@ -392,4 +403,20 @@ a:hover {
 
 .generator-options tbody {
   font-size: 80%;
+}
+
+.generator-options .question {
+  background-color: #f3f6fa;
+  font-size: 80%;
+  font-weight: bold;
+}
+
+.generator-options .answer {
+  font-weight: bold;
+  text-align: center;
+}
+
+.generator-options .clear,
+.generator-options .clear tr {
+  border: none;
 }

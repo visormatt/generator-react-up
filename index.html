@@ -19,9 +19,9 @@
       <a href="https://github.com/visormatt/generator-react-up/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/visormatt/generator-react-up/tarball/master" class="btn">Download .tar.gz</a>
     -->
-    <div class="yeoman">
+    <a class="yeoman" href="http://yeoman.io" target="_blank">
       <img src="http://yeoman.io/static/yeoman-character-sticker.51cef7e007.png" alt="">
-    </div>
+    </a>
   </section>
   <section class="main-content">
     <!--
@@ -41,30 +41,104 @@
 <span class="pl-c"># Install yeoman and the generator</span>
 npm install -g yo
 npm install -g generator-react-up
-
-<span class="pl-c"># Run the initial setup (should be run from the project root)</span>
-yo react-up
 </pre>
+
+      <h3>
+        <a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup:
+      </h3>
       <p>
         Running the generator for the first time will prompt a few questions to get things setup.
       </p>
+<pre>
+<span class="pl-c"># Run the initial setup (should be run from the project root)</span>
+yo react-up
+</pre>
       <table class="generator-options">
-        <thead>
-          <tr>
-            <td style="width: 50px;">Option:</td>
-            <td style="width: 50px;">Default:</td>
-            <td>Description:</td>
-          </tr>
-        </thead>
         <tbody>
+          <tr class="question">
+            <td colspan="2"
+              style="width: 50px;">
+              1. Would you like to run the setup?
+            </td>
+          </tr>
           <tr>
-            <td style="width: 50px;">One</td>
-            <td style="width: 50px;">Two:</td>
-            <td>Some more information on how this option works.</td>
+            <td>
+              Running setup simply copies some files into a local directory
+              of your choosing. This is done to enable a deeper level of
+              customization.
+            </td>
+            <td class="answer">Yes!</td>
+          </tr>
+          <tr class="clear">
+            <td class="clear"></td>
+          </tr>
+          <tr class="question">
+            <td colspan="2"
+              style="width: 50px;">
+              2. Enter a custom domain
+            </td>
+          </tr>
+          <tr>
+            <td>
+              The value entered here will be added to the <b>package.json</b>
+              inside of each self-contained Component.
+            </td>
+            <td class="answer">example.com</td>
+          </tr>
+          <tr class="clear">
+            <td class="clear"></td>
+          </tr>
+          <tr class="question">
+            <td colspan="2"
+              style="width: 50px;">
+              3. Run generator from the current directory?
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Setting this to <b>no</b> will mean that each new Component is
+              created in the Project root, the same location this setup should
+              be running from :)
+            </td>
+            <td class="answer">Yes</td>
+          </tr>
+          <tr class="clear">
+            <td class="clear"></td>
+          </tr>
+          <tr class="question">
+            <td colspan="2"
+              style="width: 50px;">
+              4. Enter a local template path
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Feel free to set this to what makes the most sense. Optionally, you
+              can choose to add either, or, <b>.yo-rc.json</b> / <b>template</b>
+              folder chosen to your <b>.gitignore</b> or similar.
+            </td>
+            <td class="answer">_templates/</td>
+          </tr>
+          <tr class="clear">
+            <td class="clear"></td>
           </tr>
         </tbody>
       </table>
     </div>
+    <h3>
+      <a id="customization" class="anchor" href="#customization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Customization:
+    </h3>
+    <p>
+      To create or modify existing methods available, simply update the
+      <code><b>mappings.js</b></code> within your local template folder. It's
+      a pretty simple idea and highly flexible. Feel free to clobber the built in methods and create your own.
+    </p>
+    <p>
+      You can also re-run the setup comman at any time, just keep any eye out that you don't overwrite your changes clicking <b>"Y"</b> too fast.
+    </p>
+<pre>
+yo react-up:setup
+</pre>
     <h3>
       <a id="default-methods" class="anchor" href="#default-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Default Methods:
     </h3>
@@ -83,16 +157,6 @@ yo react-up <span class="pl-k">&lt;</span>ComponentName<span class="pl-k">&gt;</
 yo react-up <span class="pl-k">&lt;</span>name<span class="pl-k">&gt;</span> <span class="pl-c1">test</span>
 </pre>
     </div>
-    <h3>
-      <a id="customization" class="anchor" href="#customization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Customization:
-    </h3>
-    <p>
-      To create or modify existing methods available, simply update the <code>mappings.js</code> within your local template folder.
-      You can also re-run the setup comman at any time, just keep any eye out that you don't overwrite your changes clicking <b>"Y"</b> too fast.
-<pre>
-yo react-up:setup
-</pre>
-    </p>
     <footer class="site-footer">
       <h5>
         <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License:
