@@ -106,12 +106,12 @@ class Setup extends ReactUp { // eslint-disable-line padded-blocks
    * to their templates. Always grabbing the default templates which exist
    * inside of the NPM package
    */
-  _setupTemplatePath(files) {
-    const defaultTemplates = path.resolve(__dirname, '../../templates');
+  _setupTemplatePath(dest) {
+    const templates = path.resolve(__dirname, '../../templates');
 
-    pathHelper.create(files)
+    pathHelper.create(dest)
       .then(() => {
-        this.template(defaultTemplates, files);
+        this.template(templates, dest);
       })
       .catch(logger.error);
   }
