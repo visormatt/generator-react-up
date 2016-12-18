@@ -61,15 +61,29 @@ a:hover {
   /*border-color: rgba(255, 255, 255, 0.3); */
 }
 
+.link-image {
+  /*display: inline;*/
+  display: none;
+  max-width: 40px;
+}
+
+.btn {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 10px;
+}
+
 @media screen and (min-width: 64em) {
   .btn {
-    padding: 0.75rem 1rem;
+    /*padding: 0.75rem 1rem;*/
   }
 }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .btn {
-    padding: 0.6rem 0.9rem;
+    /*padding: 0.6rem 0.9rem;*/
     /*font-size: 0.9rem;*/
   }
 }
@@ -78,7 +92,7 @@ a:hover {
   .btn {
     display: block;
     width: 100%;
-    padding: 0.75rem;
+    /*padding: 0.75rem;*/
     /*font-size: 0.9rem;*/
   }
 
