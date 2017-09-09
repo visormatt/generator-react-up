@@ -1,16 +1,15 @@
-<!-- NPM Info -->
-![NPM License           ](https://img.shields.io/npm/l/generator-react-up.svg?style=flat-square)
-![NPM Version           ](https://img.shields.io/npm/v/generator-react-up.svg?style=flat-square)
-![NPM Total Downloads   ](https://img.shields.io/npm/dt/generator-react-up.svg?style=flat-square)
-![NPM Monthly Downloads ](https://img.shields.io/npm/dm/generator-react-up.svg?style=flat-square)
-![Node Dependencies](https://img.shields.io/versioneye/d/visormatt/generator-react-up.svg)
-
 <!-- Github Styled -->
-<!-- ![Github Followers](https://img.shields.io/github/followers/visormatt.svg?style=social&label=Follow) -->
-![Github Stars](https://img.shields.io/github/stars/visormatt/generator-react-up.svg?style=social&label=Stars)
-![Github Forks](https://img.shields.io/github/forks/visormatt/generator-react-up.svg?style=social&label=Forks)
-![GitHub watchers](https://img.shields.io/github/watchers/visormatt/generator-react-up.svg?style=social&label=Watchers)
-![Github Issues](https://img.shields.io/github/issues/visormatt/generator-react-up.svg?style=social&label=Issues)
+[![Github Stars          ](https://img.shields.io/github/stars/visormatt/generator-react-up.svg?style=social&label=Stars)](https://goo.gl/jpazNR)
+[![Github Forks          ](https://img.shields.io/github/forks/visormatt/generator-react-up.svg?style=social&label=Forks)](https://goo.gl/oVDLCr)
+[![GitHub watchers       ](https://img.shields.io/github/watchers/visormatt/generator-react-up.svg?style=social&label=Watchers)](https://goo.gl/i7yY2y)
+[![Github Issues         ](https://img.shields.io/github/issues/visormatt/generator-react-up.svg?style=social&label=Issues)](https://goo.gl/MTnEPt)
+
+<!-- NPM Info -->
+[![NPM License           ](https://img.shields.io/npm/l/generator-react-up.svg?style=flat-square)](https://goo.gl/DHr44f)
+[![NPM Version           ](https://img.shields.io/npm/v/generator-react-up.svg?style=flat-square)](https://goo.gl/DHr44f)
+[![NPM Total Downloads   ](https://img.shields.io/npm/dt/generator-react-up.svg?style=flat-square)](https://goo.gl/DHr44f)
+[![NPM Monthly Downloads ](https://img.shields.io/npm/dm/generator-react-up.svg?style=flat-square)](https://goo.gl/DHr44f)
+[![Node Dependencies     ](https://img.shields.io/versioneye/d/visormatt/generator-react-up.svg)](https://goo.gl/DHr44f)
 
 # React-Up
 This is a simple [Yeoman Generator](http://yeoman.io/) to help speed up the `stubbing` of a React `<Component />`. Each component is treated as an individual Module / Package with all files being co-located including optional tests.
