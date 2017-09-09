@@ -5,10 +5,12 @@
 [![Github Issues         ](https://img.shields.io/github/issues/visormatt/generator-react-up.svg?style=social&label=Issues)](https://goo.gl/MTnEPt)
 
 <!-- NPM Info -->
-[![NPM License           ](https://img.shields.io/npm/l/generator-react-up.svg?style=flat-square)](https://goo.gl/DHr44f)
-[![NPM Version           ](https://img.shields.io/npm/v/generator-react-up.svg?style=flat-square)](https://goo.gl/DHr44f)
 [![NPM Total Downloads   ](https://img.shields.io/npm/dt/generator-react-up.svg?style=flat-square)](https://goo.gl/DHr44f)
 [![NPM Monthly Downloads ](https://img.shields.io/npm/dm/generator-react-up.svg?style=flat-square)](https://goo.gl/DHr44f)
+
+[![NPM License           ](https://img.shields.io/npm/l/generator-react-up.svg?style=flat-square)](https://goo.gl/DHr44f)
+[![NPM Version           ](https://img.shields.io/npm/v/generator-react-up.svg?style=flat-square)](https://goo.gl/DHr44f)
+
 [![Node Dependencies     ](https://img.shields.io/versioneye/d/visormatt/generator-react-up.svg)](https://goo.gl/DHr44f)
 
 # React-Up
