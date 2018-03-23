@@ -11,7 +11,8 @@ import ReactUp from './ReactUp';
  * @description Allows the user to define more custom workflows by updating
  * the object found locally in `_templates/mappings.js`
  */
-class Custom extends ReactUp { // eslint-disable-line padded-blocks
+class Custom extends ReactUp {
+  // eslint-disable-line padded-blocks
 
   /**
    * @description We use this method to ensure the user has copied the
@@ -32,20 +33,19 @@ class Custom extends ReactUp { // eslint-disable-line padded-blocks
   setup() {
     if (this.stop) return Promise.resolve();
 
-    path.file('_templates/mappings.js')
-      .then((mappings) => {
-        const customBuilds = mappings(this.data);
-        const type = this.data.type;
-        const node = customBuilds[type];
+    return path.file('mappings.js', this.config).then(mappings => {
+      const customBuilds = mappings(this.data);
+      const type = this.data.type;
+      const node = customBuilds[type];
 
-        this._confirm(node.detail) // eslint-disable-line no-underscore-dangle
-          .then(() => {
-            this._copy(node); // eslint-disable-line no-underscore-dangle
-          })
-          .catch(() => {
-            logger.skip(node.description || 'custom template');
-          });
-      });
+      this._confirm(node.detail) // eslint-disable-line no-underscore-dangle
+        .then(() => {
+          this._copy(node); // eslint-disable-line no-underscore-dangle
+        })
+        .catch(() => {
+          logger.skip(node.description || 'custom template');
+        });
+    });
   }
 
   _copy(node) {
@@ -58,10 +58,10 @@ class Custom extends ReactUp { // eslint-disable-line padded-blocks
     } else {
       const file = chalk.bold('folder -> mappings.js');
       const str = chalk.bold(type);
-      const fileError = `File mapping for "${ str }" not found.`;
-      const templateError = `Please check your local templates ${ file }`;
+      const fileError = `File mapping for "${str}" not found.`;
+      const templateError = `Please check your local templates ${file}`;
 
-      logger.error(`${ fileError } ${ templateError }`);
+      logger.error(`${fileError} ${templateError}`);
     }
   }
 
@@ -79,7 +79,7 @@ class Custom extends ReactUp { // eslint-disable-line padded-blocks
 
     return new Promise((resolve, reject) => {
       this.prompt(question)
-        .then((answers) => {
+        .then(answers => {
           if (answers.confirm) resolve(answers.confirm);
           if (!answers.confirm) reject(answers.confirm);
         })
@@ -94,10 +94,10 @@ class Custom extends ReactUp { // eslint-disable-line padded-blocks
   _copyFiles(files) {
     const { config, current } = this.data;
 
-    files.map((file) => {
+    files.map(file => {
       const src = file[0];
       const out = file[1] || file[0];
-      const dest = config.relative ? `${ current }/${ out }` : out;
+      const dest = config.relative ? `${current}/${out}` : out;
 
       try {
         this.template(src, dest, this.data);
