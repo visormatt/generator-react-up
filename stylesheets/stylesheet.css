@@ -21,7 +21,7 @@ a:hover {
 }
 
 .badges a {
-  display: inline;
+  display: inline-block;
 }
 
 .btn {
