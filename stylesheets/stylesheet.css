@@ -5,32 +5,23 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #606c71;
 }
 
 a {
-  color: #FF0000;
+  color: #ff0000;
   text-decoration: none;
-  /*text-decoration: underline;*/
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-.text-shadow {
-  -webkit-text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
-  -moz-text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
-  text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-.box-shadow {
-  -webkit-box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
-  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
+.badges a {
+  display: inline;
 }
 
 .btn {
@@ -40,7 +31,7 @@ a:hover {
   border-style: solid;
   border-width: 1px;
   /*color: rgba(255, 255, 255, 0.7);*/
-  color: #FF0000;
+  color: #ff0000;
   display: inline-block;
   font-size: 12px;
   font-weight: bold;
@@ -103,10 +94,10 @@ a:hover {
 }
 
 .page-header {
-  color: #FFF;
+  color: #fff;
   text-align: center;
   /*background-color: #FF0000;*/
-  background-image: linear-gradient(120deg, #FF0000, #990000);
+  background-image: linear-gradient(120deg, #ff0000, #990000);
   border-bottom: 1px solid #990000;
   overflow: hidden;
   position: relative;
@@ -182,7 +173,7 @@ a:hover {
 
 .project-tagline em {
   font-weight: bold;
-  opacity: .9;
+  opacity: 0.9;
 }
 
 @media screen and (min-width: 64em) {
@@ -226,7 +217,7 @@ a:hover {
 }
 .main-content code {
   padding: 2px 4px;
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size: 0.9rem;
   color: #333;
   background-color: #f3f6fa;
@@ -236,23 +227,23 @@ a:hover {
   padding: 0.8rem;
   margin-top: 0;
   margin-bottom: 1rem;
-  font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font: 1rem Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   color: #567482;
   word-wrap: normal;
   background-color: #f3f6fa;
   border: solid 1px #dce6f0;
   border-radius: 0.3rem;
 }
-  .main-content pre > code {
-    padding: 0;
-    margin: 0;
-    font-size: 0.9rem;
-    color: #567482;
-    word-break: normal;
-    white-space: pre;
-    background: transparent;
-    border: 0;
-  }
+.main-content pre > code {
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #567482;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
 .main-content .highlight {
   margin-bottom: 1rem;
 }
@@ -260,14 +251,16 @@ a:hover {
   margin-bottom: 0;
   word-break: normal;
 }
-.main-content .highlight pre, .main-content pre {
+.main-content .highlight pre,
+.main-content pre {
   padding: 0.8rem;
   overflow: auto;
   font-size: 0.9rem;
   line-height: 1.45;
   border-radius: 0.3rem;
 }
-.main-content pre code, .main-content pre tt {
+.main-content pre code,
+.main-content pre tt {
   display: inline;
   max-width: initial;
   padding: 0;
@@ -310,7 +303,8 @@ a:hover {
 .main-content table th {
   font-weight: bold;
 }
-.main-content table th, .main-content table td {
+.main-content table th,
+.main-content table td {
   padding: 0.5rem 1rem;
   border: 1px solid #e9ebec;
 }
@@ -410,7 +404,7 @@ a:hover {
 
 .generator-options thead {
   background-color: #ccc;
-  background-color: rgba(200, 200, 200, .3);
+  background-color: rgba(200, 200, 200, 0.3);
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -445,4 +439,16 @@ a:hover {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.text-shadow {
+  -webkit-text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
+  -moz-text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.box-shadow {
+  -webkit-box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.5);
 }
